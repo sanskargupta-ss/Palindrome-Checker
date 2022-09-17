@@ -1,0 +1,26 @@
+let regex = /[^A-Za-z0-9]/g;
+
+
+function palindrome(str) {
+  
+  let newStr = str.replace(regex, "").toLowerCase();
+  
+  let revStr = "";
+  
+  for(let i = 0; i < newStr.length; i++) {
+  	let cut = newStr.slice(i, i + 1);
+    revStr = cut + revStr;
+  }
+  
+  if(newStr == revStr) {
+    return true;
+    
+  }
+  else {
+    return false;
+    
+  }
+}
+
+
+palindrome("eye");
